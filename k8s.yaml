@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins-demo
+  name: jenkins-test
   namespace: default
 spec:
   selector:
     matchLabels:
-      app: jenkins-demo
+      app: jenkins-test
   template:
     metadata:
       labels:
-        app: jenkins-demo
+        app: jenkins-test
     spec:
       containers:
-      - image: swr.cn-east-3.myhuaweicloud.com/batch/jenkins-demo:<BUILD_TAG>
+      - image: swr.na-mexico-1.myhuaweicloud.com/test-swr/jenkins-test:<BUILD_TAG>
         imagePullPolicy: IfNotPresent
         command:
           - sleep
         args:
           - '1000'
-        name: jenkins-demo
+        name: jenkins-test
         env:
         - name: branch
       imagePullSecrets:
