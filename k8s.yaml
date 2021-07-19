@@ -13,7 +13,7 @@ spec:
         app: jenkins-test
     spec:
       containers:
-      - image: swr.na-mexico-1.myhuaweicloud.com/test-swr/jenkins-test:<BUILD_TAG>
+      - image: swr.na-mexico-1.myhuaweicloud.com/test-swr/jenkins-test2:<BUILD_TAG>
         imagePullPolicy: IfNotPresent
         command:
           - sleep
