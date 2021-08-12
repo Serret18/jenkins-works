@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenkins-test-ks
+  name: test-ks
   namespace: default
 spec:
   selector:
     matchLabels:
-      app: jenkins-test-ks
+      app: test-ks
   template:
     metadata:
       labels:
-        app: jenkins-test-ks
+        app: test-ks
     spec:
       containers:
-      - image: swr.na-mexico-1.myhuaweicloud.com/test-swr/jenkins-test-ks:<BUILD_TAG>
+      - image: swr.na-mexico-1.myhuaweicloud.com/test-swr/jenkins-pipeline:<BUILD_TAG>
         imagePullPolicy: IfNotPresent
         command:
           - sleep
         args:
           - '1000'
-        name: jenkins-test-ks
+        name: test-ks
         env:
         - name: branch
       imagePullSecrets:
